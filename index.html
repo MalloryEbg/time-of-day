@@ -82,6 +82,9 @@
 		<p>This website is able to change color depending on the time the device it is working on as well as the <a href="https://learnshareit.com/how-to-get-the-current-year-for-copyright-in-javascript/" target="_blank">year</a>
 			by the copyright sign.</p>
 
+		
+		<p id="show"></p>
+
 		<img id="my-pic" src="http://dummyimage.com/300x400" alt="Time of Day Image" class="flexible">
 		<footer>
 			<p><small>&copy; <script>document.write(new Date().getFullYear())</script>  by
@@ -108,15 +111,22 @@
 		let myGreeting = "";
 		let myColor = "";
 		let myPic = "";
-
-
+		
+		
+		
 		// TESTING TIME
-		// myHour = 3;
-
+		// myHour = 19;
+		
 		// Current time without adding minutes and seconds
 		time = myDate.getHours();
 		// Hours, Minutes and Seconds.
 		// time = myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds;
+		// Current Day shown
+		const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+		let day = myDate.getDate();
+		let dayName = weekdays[myDate.getDay()];
+
+
 
 		if (myHour > 22 || myHour < 4) {// night
 			myGreeting = "Good Night!  Bonne Nuit!";
@@ -127,7 +137,7 @@
             myColor = "gold";
             myPic = "morning.jpg"
 		}if (myHour > 11) {//afternoon
-            myGreeting = "Good Afternoon!  Bon Apresmidi";
+            myGreeting = "Good Afternoon!  Bon Après-midi";
             myColor = "green";
             myPic = "afternoon.jpg"
         }if (myHour > 17) {//evening
@@ -144,6 +154,11 @@
 		document.querySelector("html").style.backgroundColor = myColor;
 	
 		document.getElementById("my-pic").src = myPic;
+
+		// Find and show day
+		document.getElementById("show").innerHTML = dayName;
+		
+	
 
 
 		document.getElementById("html-checker").setAttribute("href", "https://validator.w3.org/nu/?doc=" + location.href);
