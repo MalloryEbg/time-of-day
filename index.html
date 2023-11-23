@@ -115,7 +115,7 @@
 		
 		
 		// Time TESTING
-		// myHour = 19;
+		// myHour = 4;
 		
 		// Current time without adding minutes or seconds
 		time = myDate.getHours();
@@ -126,25 +126,28 @@
 		let result = myDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
 
 
-
-		if (myHour > 22 || myHour < 4) {// night
-			myGreeting = "Good Night!  Bonne Nuit!";
-			myColor = "darkblue";
-			myPic = "night.jpg"
-		}if (myHour > 4) {//morning
-            myGreeting = "Good Morning!  Bonjour!";
-            myColor = "gold";
-            myPic = "morning.jpg"
-		}if (myHour > 11) {//afternoon
-            myGreeting = "Good Afternoon!  Bon Après-midi";
-            myColor = "green";
-            myPic = "afternoon.jpg"
-        }if (myHour > 17) {//evening
-            myGreeting = "Good Evening!  Bonsoir!";
-            myColor = "chocolate";
-            myPic = "evening.jpg"
-        }
-
+	if (myHour > 4) {//morning
+		myGreeting = "Good Morning!  Bonjour!";
+		myColor = "gold";
+		myPic = "morning.jpg"
+	}
+	else if (myHour > 11) {//afternoon
+		myGreeting = "Good Afternoon!  Bon Après-midi";
+		myColor = "green";
+		myPic = "afternoon.jpg"
+	}
+	else if (myHour > 17) {//evening
+	myGreeting = "Good Evening!  Bonsoir!";
+	myColor = "chocolate";
+	myPic = "evening.jpg"
+	}
+	if (myHour > 22 || myHour <= 4) {// night
+		myGreeting = "Good Night!  Bonne Nuit!";
+		myColor = "darkblue";
+		myPic = "night.jpg"
+	}
+	
+	
         myPic = 'images/' + myPic;
 
 
