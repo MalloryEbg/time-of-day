@@ -80,7 +80,7 @@
 		</p>
 
 		<p>This website is able to change color depending on the time the device it is working on as well as the <a href="https://learnshareit.com/how-to-get-the-current-year-for-copyright-in-javascript/" target="_blank">year</a>
-			by the copyright sign. A plus would be adding the name of currently local day to be <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_date_weekday" target="_blank">displayed</a>.</p>
+			by the copyright sign. A plus would be adding the name of currently local day to be displayed.</p>
 
 		
 		<p id="show"></p>
@@ -114,17 +114,16 @@
 		
 		
 		
-		// TESTING TIME
+		// Time TESTING
 		// myHour = 19;
 		
-		// Current time without adding minutes and seconds
+		// Current time without adding minutes or seconds
 		time = myDate.getHours();
 		// Hours, Minutes and Seconds.
 		// time = myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds;
-		// Current Day shown
-		const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-		let day = myDate.getDate();
-		let dayName = weekdays[myDate.getDay()];
+
+		// Current Date
+		let result = myDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
 
 
 
@@ -156,9 +155,8 @@
 		document.getElementById("my-pic").src = myPic;
 
 		// Find and show day
-		document.getElementById("show").innerHTML = dayName;
-		
-	
+		document.getElementById("show").innerHTML = result;
+
 
 
 		document.getElementById("html-checker").setAttribute("href", "https://validator.w3.org/nu/?doc=" + location.href);
