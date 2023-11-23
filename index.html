@@ -84,7 +84,7 @@
 
 		<img id="my-pic" src="http://dummyimage.com/300x400" alt="Time of Day Image" class="flexible">
 		<footer>
-			<p><small>&copy; <span id="current-year"></span> by
+			<p><small>&copy; <script>document.write(new Date().getFullYear())</script>  by
 					Mallory Ebengho, All Rights Reserved ~
 					<a id="html-checker" href="#" target="_blank">Check HTML</a> ~
 					<a id="css-checker" href="#" target="_blank">Check CSS</a></small>
@@ -144,8 +144,6 @@
 		document.querySelector("html").style.backgroundColor = myColor;
 	
 		document.getElementById("my-pic").src = myPic;
-		// Current Year by Copyright
-		document.getElementById("current-year").innerHTML = new Date().getFullYear();
 
 
 		document.getElementById("html-checker").setAttribute("href", "https://validator.w3.org/nu/?doc=" + location.href);
