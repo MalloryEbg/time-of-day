@@ -69,39 +69,48 @@
 			<h3>A JavaScript Project by Mallory Ebengho</h3>
 		</header>
 		<h3 id="my-greeting">Greeting goes here!</h3>
-		
-		<p>It is with a heart fill with pleasure and adventure, while I researched how to ask the right questions and working along the search engine Bing that a solution was found.</p>
-		
-		<p>Two websites were frequent and useful to help become more hands-on while not forgetting to confirm some of my assumptions with facts on <a href="https://www.w3schools.com/js/js_comparisons.asp" target="_blank">w3schools</a>.</p>
-		
-		<p><a href="https://stackoverflow.com/questions/53813700/javascript-conditional-statements-with-range-input-values ta" target="_blank">StackOverflow</a>
-			and <a href="https://www.w3docs.com/snippets/javascript/how-to-get-the-current-date-and-time-in-javascript.html" target="_blank">W3docs</a>
+
+		<p>It is with a heart fill with pleasure and adventure, while I researched how to ask the right questions and
+			working along the search engine Bing that a solution was found.</p>
+
+		<p>Two websites were frequent and useful to help become more hands-on while not forgetting to confirm some of my
+			assumptions with facts on <a href="https://www.w3schools.com/js/js_comparisons.asp"
+				target="_blank">w3schools</a>.</p>
+
+		<p><a href="https://stackoverflow.com/questions/53813700/javascript-conditional-statements-with-range-input-values ta"
+				target="_blank">StackOverflow</a>
+			and <a href="https://www.w3docs.com/snippets/javascript/how-to-get-the-current-date-and-time-in-javascript.html"
+				target="_blank">W3docs</a>
 			linked sites had great examples that I would recommend to try out.
 		</p>
 
-		<p>This website is able to change color depending on the time the device it is working on as well as the <a href="https://learnshareit.com/how-to-get-the-current-year-for-copyright-in-javascript/" target="_blank">year</a>
+		<p>This website is able to change color depending on the time the device it is working on as well as the <a
+				href="https://learnshareit.com/how-to-get-the-current-year-for-copyright-in-javascript/"
+				target="_blank">year</a>
 			by the copyright sign. A plus would be adding the name of currently local day to be displayed.</p>
 
 		<p id="show"></p>
 
 		<img id="my-pic" src="http://dummyimage.com/300x400" alt="Time of Day Image" class="flexible">
 		<footer>
-			<p><small>&copy; <script>document.write(new Date().getFullYear())</script>  by
+			<p><small>&copy;
+					<script>document.write(new Date().getFullYear())</script> by
 					Mallory Ebengho, All Rights Reserved ~
 					<a id="html-checker" href="#" target="_blank">Check HTML</a> ~
-					<a id="css-checker" href="#" target="_blank">Check CSS</a></small>
+					<a id="css-checker" href="#" target="_blank">Check CSS</a>
+				</small>
 			</p>
 		</footer>
 	</main>
 	<script>
 
 		/*
-		Deliverable: Create a web page that uses JavaScript to determine the current hour, and presents a different image, custom message, and color based on each of the following times of day:
-		Morning (5am to 12 noon)
-		Afternoon (12 noon to 6pm)
-		Evening (6pm to 11pm)
-		Night (11pm to 5am)
-		Criteria: The three items above (color, image, message) must be unique for each of the 4 time periods of the day.
+			Deliverable: Create a web page that uses JavaScript to determine the current hour, and presents a different image, custom message, and color based on each of the following times of day:
+			Morning (5am to 12 noon)
+			Afternoon (12 noon to 6pm)
+			Evening (6pm to 11pm)
+			Night (11pm to 5am)
+			Criteria: The three items above (color, image, message) must be unique for each of the 4 time periods of the day.
 		*/
 
 
@@ -110,50 +119,82 @@
 		let myGreeting = "";
 		let myColor = "";
 		let myPic = "";
-		
-		
-		
-		// Time TESTING
-		// myHour = 4;
-		
-		// Current time without adding minutes or seconds
-		time = myDate.getHours();
-		// Hours, Minutes and Seconds.
-		// time = myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds;
+		let dayNum = "";
+
+
 
 		// Current Date
 		let result = myDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+		// Time TESTING
+		// myHour = 13;
 
 
-	if (myHour > 4) {//morning
-		myGreeting = "Good Morning!  Bonjour!";
-		myColor = "gold";
-		myPic = "morning.jpg"
-	}
-	else if (myHour > 11) {//afternoon
-		myGreeting = "Good Afternoon!  Bon Après-midi";
-		myColor = "green";
-		myPic = "afternoon.jpg"
-	}
-	else if (myHour > 17) {//evening
-	myGreeting = "Good Evening!  Bonsoir!";
-	myColor = "chocolate";
-	myPic = "evening.jpg"
-	}
-	if (myHour > 22 || myHour <= 4) {// night
-		myGreeting = "Good Night!  Bonne Nuit!";
-		myColor = "darkblue";
-		myPic = "night.jpg"
-	}
+		// Hours, Minutes and Seconds.
+		// time = myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds;
 
 
-        myPic = 'images/' + myPic;
+		if (myHour => 5 && myHour < 12) {//morning
+			myGreeting = "Good Morning!  Bonjour!";
+			myColor = "gold";
+			myPic = "morning.jpg";
+		} 
+		else if (myHour > 11 && myHour < 18) {//afternoon
+			myGreeting = "Good Afternoon!  Bon Après-midi";
+			myColor = "green";
+			myPic = "afternoon.jpg";
+		} 
+		else if (myHour > 17 && myHour < 23) {//evening
+			myGreeting = "Good Evening!  Bonsoir!";
+			myColor = "chocolate";
+			myPic = "evening.jpg";
+		} 
+		else {//night
+			myGreeting = "Good Night!  Bonne Nuit!";
+			myColor = "darkblue";
+			myPic = "night.jpg";
+		}
+
+		switch(dayNum){
+			case 0:
+				today = "sunday";
+			break;
+
+			case 1:
+				today = "Monday";
+			break;
+
+			case 2:
+				today = "Tuesday";
+			break;
+
+			case 3:
+				today = "Wednesday";
+			break;
+
+			case 4:
+				today = "Thursday";
+			break;
+
+			case 5:
+				today = "Friday";
+			break;
+
+			case 6:
+				today = "Saturday";
+			break;
+
+			default:
+				today = "Something went wrong";
+			}
+
+
+		myPic = 'images/' + myPic;
 
 
 		document.getElementById("my-greeting").innerHTML = myGreeting;
 
 		document.querySelector("html").style.backgroundColor = myColor;
-	
+
 		document.getElementById("my-pic").src = myPic;
 
 		// Find and show the whole date and year
